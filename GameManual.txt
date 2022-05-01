@@ -1,0 +1,50 @@
+Tic-Tac-Toe Game - A client and server socket programing project
+
+Created by Brad Schaeffer and Reed Sanders
+----------------------------------------------
+How to run ./client-c and ./server-c:
+----------------------------------------------
+1. You will have to compile a server.c and client.c
+2. You will have start the server first by running it. Note the server defaults to port 8888. EXAMPLE: ./server
+3. Then you will have to run the client with the server I.P. address and port number. EXAMPLE: ./client SERVER IP 8888
+4. Both client and server should provide feedback if working correctly or an error occurs
+5. All of these steps can also be done by running the Makefile with the “make” command 
+6. After the players are connected the game will begin by asking Player 1 to make their first move
+
+
+----------------------------------------------
+Game Explanation
+----------------------------------------------
+1) Player 1 will be prompted with a game board and will be asked to enter a grid number. Player one will be assigned a 'X' automatically on the clients game board. 
+Player 1's input will be sent over to the server. The server has a copy of the clients game board. Server will autenticate a win. If there is no win yet, the game
+will continue.  
+
+Player 1 => X  and  Player 2 => O
+      |     |     
+  1   |  2  |  3 
+ _____|_____|_____
+      |     |     
+  4   |  5  |  6 
+ _____|_____|_____
+      |     |     
+  7   |  8  |  9 
+      |     |     
+
+2) Player 2 will be prompted with a game board. This board will have a letter 'X' filled in wherever Player 1 entered their choice.
+      |     |     
+  1   |  2  |  3 
+ _____|_____|_____
+      |     |     
+  4   |  X  |  6 
+ _____|_____|_____
+      |     |     
+  7   |  8  |  9 
+      |     |      
+
+*example Board if Player one chose '5'
+Player two will chose a grid number. A 'O' will be automatically entered. Player 2's grid choice will be sent over to server to make sure there are no repeats and a win has not occured.
+3)If there is no win then the game will continue and Player 1/Player 2 will take turns entering information on the same client.
+4)If the server detects 3 in a row, then the game will end and a winner will be awarded. 
+
+
+
